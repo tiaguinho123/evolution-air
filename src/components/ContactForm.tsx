@@ -41,7 +41,7 @@ export default function ContactForm() {
                 <div>
                   <h4 className="text-white font-semibold text-lg mb-1">{item.label}</h4>
                   {item.href ? (
-                    <a href={item.href} className="text-slate-300 hover:text-amber-400 transition-colors text-xl font-bold">{item.value}</a>
+                    <a href={item.href} className="text-slate-300 hover:text-white transition-colors text-xl font-bold">{item.value}</a>
                   ) : (
                     <p className="text-slate-300">{item.value}</p>
                   )}

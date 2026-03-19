@@ -26,7 +26,7 @@ export default function TrustBadges() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex flex-col items-center text-center gap-2 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-amber-200 hover:bg-amber-50/40 transition-colors"
+                className="flex flex-col items-center text-center gap-2 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 hover:shadow-sm transition-all"
               >
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center"
