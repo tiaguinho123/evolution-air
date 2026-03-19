@@ -54,7 +54,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero — real image + real copy from evolutionairllc.com */}
-      <section className="relative" aria-label="Hero">
+      <section className="relative pt-20" aria-label="Hero">
         <div className="relative overflow-hidden" style={{ height: '580px' }}>
           <img
             src={HERO_IMAGE}

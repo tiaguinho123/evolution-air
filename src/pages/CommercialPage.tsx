@@ -40,7 +40,7 @@ export default function CommercialPage() {
   return (
     <div>
       {/* Banner */}
-      <div className="relative h-64 md:h-80 overflow-hidden">
+      <div className="relative pt-20 h-64 md:h-80 overflow-hidden">
         <img
           src="https://evolutionairllc.com/wp-content/uploads/2020/09/condenser-repair.jpg"
           alt="Evolution Air LLC — Commercial HVAC in Fairfield County CT"

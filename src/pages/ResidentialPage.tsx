@@ -37,7 +37,7 @@ export default function ResidentialPage() {
   return (
     <div>
       {/* Banner */}
-      <div className="relative h-64 md:h-80 overflow-hidden">
+      <div className="relative pt-20 h-64 md:h-80 overflow-hidden">
         <img
           src="https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-11.jpg"
           alt="Evolution Air LLC — Residential HVAC in Fairfield County CT"

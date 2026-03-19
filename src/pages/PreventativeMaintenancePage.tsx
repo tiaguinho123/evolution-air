@@ -38,7 +38,7 @@ export default function PreventativeMaintenancePage() {
   return (
     <div>
       {/* Banner */}
-      <div className="relative h-64 md:h-80 overflow-hidden">
+      <div className="relative pt-20 h-64 md:h-80 overflow-hidden">
         <img
           src="https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-12.jpg"
           alt="Evolution Air LLC — Preventative Maintenance in Fairfield County CT"
