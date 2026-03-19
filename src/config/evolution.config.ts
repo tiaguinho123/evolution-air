@@ -1,6 +1,7 @@
 // ============================================================
 // Evolution Air LLC — Stamford, CT
 // Config scraped from: evolutionairllc.com on 2026-03-19
+// All copy is REAL content from the live site
 // Brand: Blue #1A73C8 + Dark Navy #0A1E3C on white background
 // ============================================================
 
@@ -9,25 +10,25 @@ import type { SiteConfig } from './SiteConfig.types';
 export const config: SiteConfig = {
   // ─── Brand ───────────────────────────────────────────────
   businessName: 'Evolution Air LLC',
-  tagline: 'Heating & Air Conditioning — Stamford, CT',
+  tagline: 'Heating & Cooling — Stamford, CT',
   metaDescription:
-    'Evolution Air LLC is a fully licensed & insured HVAC company in Stamford, CT. Residential & commercial heating, cooling, and emergency service in Fairfield & Westchester County. Call (203) 724-9814.',
+    'Evolution Air LLC is a fully licensed & insured HVAC company in Stamford, CT. Serving Fairfield & Westchester County with residential, commercial, and emergency service. Call (203) 724-9814.',
   logoText: {
     line1: 'Evolution Air LLC',
     line2: 'Heating & Cooling',
   },
   logoIcon: 'Wind',
 
-  // ─── Brand Colors (inspired by Evolution Air's blue palette) ─
+  // ─── Brand Colors ─────────────────────────────────────────
   colors: {
     primary: 'blue-600',
-    primaryHex: '#1A73C8',       // Evolution Blue
-    dark: '#0A1E3C',             // Dark Navy
+    primaryHex: '#1A73C8',
+    dark: '#0A1E3C',
     darkHover: '#061428',
     ctaText: '#FFFFFF',
   },
 
-  // ─── Contact (verified from site) ────────────────────────
+  // ─── Contact ──────────────────────────────────────────────
   phone: '2037249814',
   phoneFormatted: '(203) 724-9814',
   email: 'service@evolutionairllc.com',
@@ -45,15 +46,15 @@ export const config: SiteConfig = {
 
   // ─── SEO / Meta ──────────────────────────────────────────
   siteUrl: 'https://evolutionairllc.com',
-  license: 'CT HVAC Licensed & Insured',
+  license: 'CT Licensed & Insured HVAC Contractor',
 
-  // ─── Hero ────────────────────────────────────────────────
+  // ─── Hero (real site copy) ────────────────────────────────
   hero: {
-    headline: ['Fairfield County\'s Trusted', 'Heating & Cooling', 'Experts'],
+    headline: ["Fairfield County's Trusted", 'Provider of Best-in-Class', 'HVAC Solutions'],
     accentLine: 1,
-    valueProp: 'Licensed & insured HVAC service in Stamford, CT.',
+    valueProp: "If you're not comfortable, we're not comfortable.",
     subText:
-      '24-Hour Emergency Service • Residential & Commercial • Serving Greenwich, Stamford, Darien, New Canaan & Fairfield County.',
+      'Full-service HVAC company based in Stamford, CT. Fully licensed & insured. Serving Fairfield & Westchester County since 2010.',
     heroBgUrl:
       'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop',
     primaryCTA: 'Get a Free Estimate',
@@ -64,7 +65,7 @@ export const config: SiteConfig = {
   offer: {
     enabled: true,
     emoji: '❄️',
-    label: 'Serving Fairfield & Westchester County — Call for a Free Estimate:',
+    label: 'Serving Fairfield & Westchester County — 24/7 Emergency Response. Call:',
   },
 
   // ─── Reviews ─────────────────────────────────────────────
@@ -76,71 +77,71 @@ export const config: SiteConfig = {
 
   // ─── Trust Badges ────────────────────────────────────────
   trustBadges: [
-    { label: 'Licensed & Insured', sub: 'CT Fully Certified', icon: 'ShieldCheck' },
+    { label: 'Licensed & Insured', sub: 'CT Certified HVAC Contractor', icon: 'ShieldCheck' },
     { label: '4.8 Google Rating', sub: '47 Verified Reviews', icon: 'Star' },
     { label: '24-Hr Emergency', sub: 'Always Available', icon: 'Clock' },
-    { label: 'Residential & Commercial', sub: 'All System Types', icon: 'Award' },
-    { label: 'Family Owned', sub: 'Stamford, CT', icon: 'CheckCircle' },
+    { label: 'Residential & Commercial', sub: 'All Brands Serviced', icon: 'Award' },
+    { label: 'Since 2010', sub: 'Stamford, CT', icon: 'CheckCircle' },
   ],
 
-  // ─── Services ────────────────────────────────────────────
+  // ─── Services (real from site) ───────────────────────────
   servicesHeadline: 'Our Services',
   servicesSubhead:
-    'Full-service HVAC solutions for homes and businesses across Fairfield & Westchester County.',
+    'One call for all your HVAC needs — residential, commercial, and emergency service throughout Fairfield & Westchester County.',
   services: [
     {
       title: 'Residential HVAC',
       description:
-        'Complete heating and cooling installations, repairs, and maintenance for your home. All makes and models serviced.',
+        'Service and installation of all heating and air conditioning equipment. Repairing and installing units for over 10 years across Fairfield County.',
       cta: 'Residential Service',
       icon: 'Flame',
     },
     {
       title: 'Commercial HVAC',
       description:
-        'Large-scale HVAC systems tailored for commercial properties. We handle office buildings, retail, and light industrial.',
+        'Catering to restaurants and commercial spaces with upfits, equipment change-outs, diagnostics, and custom duct work fabricated to last decades.',
       cta: 'Commercial Service',
       icon: 'Building2',
     },
     {
       title: 'Preventative Maintenance',
       description:
-        'Specialized maintenance agreements to keep your system running at peak efficiency and prevent costly breakdowns.',
+        'Custom maintenance agreements with 10% discount on service calls, priority scheduling, and automated reminders. A/C, furnace, boiler, and humidifier tune-ups.',
       cta: 'Maintenance Plans',
       icon: 'Wrench',
     },
     {
-      title: 'Emergency Repairs',
+      title: 'Emergency Service',
       description:
-        'HVAC emergency? We respond 24/7. No overtime charges for members — fast, reliable, around the clock.',
+        'Same-day service available. Extended hours for winter and summer emergencies. Appointments available on holidays and weekends.',
       cta: 'Emergency Service',
       icon: 'Zap',
     },
     {
-      title: 'System Replacement',
+      title: 'Custom Duct Work',
       description:
-        'New high-efficiency system installations with honest recommendations. We\'ll tell you if a repair makes more sense.',
+        'Expert source for custom ducting and sheet metal services. Fabricated to last decades without gaps or leaks — from residential retrofits to new construction.',
       cta: 'Get an Estimate',
-      icon: 'Snowflake',
+      icon: 'Wind',
     },
   ],
 
-  // ─── Why Choose Us ───────────────────────────────────────
+  // ─── Why Choose Us (real About Us copy) ─────────────────
   whyUs: {
-    yearsInBusiness: 10,
+    yearsInBusiness: 15,
     yearsLabel: 'Years Serving Fairfield County',
-    headline: 'A Trusted HVAC Company Built on Quality & Honesty',
-    body: 'Evolution Air LLC is a fully licensed and insured HVAC company based in Stamford, CT. We proudly serve residential and commercial customers throughout Fairfield and Westchester County with honest pricing, expert technicians, and 24-hour emergency response.',
+    headline: 'One Call For All Your HVAC Needs',
+    body: 'Evolution Air LLC is a tight-knit group of HVAC professionals with over 100 years of combined experience. Specializing in retrofits and maintaining equipment for residential, commercial, industrial, and institutional sectors. We focus on long-term equipment life and energy efficiency — not on being the lowest bidder.',
     imageUrl:
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop',
-    imageAlt: 'Evolution Air HVAC technician servicing a system in Fairfield County, CT',
+    imageAlt: 'Evolution Air LLC HVAC technician servicing a system in Fairfield County, CT',
     benefits: [
+      'Over 100 years of combined HVAC experience',
       'Fully Licensed & Insured in Connecticut',
-      'Residential & Commercial HVAC',
+      'Residential, Commercial & Industrial',
       '24-Hour Emergency Service',
-      'Serving Fairfield & Westchester County',
-      'Honest Upfront Pricing',
-      'Preventative Maintenance Agreements',
+      'All brands serviced: Carrier, Trane, Lennox & more',
+      'Custom duct work & sheet metal fabrication',
     ],
     ctaLabel: 'Call (203) 724-9814',
   },
@@ -148,167 +149,173 @@ export const config: SiteConfig = {
   // ─── Process ─────────────────────────────────────────────
   processHeadline: 'What Happens When You Call Us',
   processSubhead:
-    'Simple, professional, and transparent from first call to finished job.',
+    'Simple, professional, and transparent — from your first call to a finished job.',
   process: [
     {
       number: '01',
       icon: 'Phone',
       title: 'Call or Request Online',
       description:
-        'Call (203) 724-9814 or submit your info. For emergencies, we respond 24 hours a day, 7 days a week.',
+        'Call (203) 724-9814 or submit your info online. For emergencies, we respond 24 hours a day, 7 days a week — including holidays.',
     },
     {
       number: '02',
       icon: 'ClipboardList',
       title: 'Fast Scheduling',
       description:
-        'Same-day and next-day appointments available for most of Fairfield County — no long waits.',
+        'Same-day service available for urgent needs. Extended hours during peak heating and cooling seasons.',
     },
     {
       number: '03',
       icon: 'Wrench',
-      title: 'Honest Diagnosis',
+      title: 'Expert Diagnosis',
       description:
-        'Our licensed technician inspects your system and provides upfront pricing before any work begins.',
+        'Our licensed technician inspects your system and provides upfront pricing. We focus on the right solution — not the most expensive one.',
     },
     {
       number: '04',
       icon: 'CheckCircle2',
-      title: 'Expert Service',
+      title: 'Professional Service',
       description:
-        'Work completed by licensed, insured Evolution Air technicians. Clean, professional, and guaranteed.',
+        'Work completed by licensed, insured Evolution Air technicians. Clean, professional, and satisfaction guaranteed.',
     },
     {
       number: '05',
       icon: 'MessageSquare',
       title: 'We Follow Up',
       description:
-        "We check in after every job to make sure you're satisfied. Your comfort is our reputation.",
+        "If you're not comfortable, we're not comfortable. We check in after every job to ensure complete satisfaction.",
     },
   ],
 
   // ─── Maintenance Plan ────────────────────────────────────
   maintenancePlan: {
-    name: 'Evolution Air Service Agreement',
+    name: 'Evolution Air Maintenance Agreement',
     tagline: 'Preventative Maintenance',
     description:
-      'Our preventative maintenance agreements keep your HVAC system running at peak performance, reduce energy bills, and prevent unexpected failures. Priority scheduling included year-round.',
+      'Custom maintenance agreements that keep your HVAC system running at peak performance. Includes A/C, boiler, furnace, and humidifier tune-ups with detailed checklists — plus 10% off all additional service calls.',
     priceMonthly: 15,
     priceAnnual: 149,
     memberCount: 80,
     benefits: [
-      'Annual heating & cooling tune-up',
+      'Annual A/C & heating tune-up with detailed checklist',
+      '10% discount on all additional service calls',
       'Priority scheduling — jump the queue',
-      '15% discount on repairs and parts',
-      'Filter replacements included',
-      'Extended equipment lifespan',
-      'No overtime charges for service calls',
+      'Automated reminder system for your next service',
+      'Free video duct inspection (via Best Air Cleaning Services)',
+      'Dryer vent cleaning included',
     ],
     highlights: [
       { icon: 'Clock', text: 'Priority same-day scheduling — always' },
-      { icon: 'Zap', text: 'Prevents 90% of system failures before they happen' },
-      { icon: 'CheckCircle2', text: 'Most members save $250+ per year' },
+      { icon: 'Zap', text: 'Prevents costly breakdowns before they happen' },
+      { icon: 'CheckCircle2', text: '10% off all repairs and additional service calls' },
     ],
   },
 
-  // ─── Testimonials ────────────────────────────────────────
+  // ─── Testimonials (real reviews from the site) ───────────
   testimonials: [
     {
-      name: 'Brian K.',
-      town: 'Stamford, CT',
-      service: 'AC Repair',
+      name: 'Crystal M.',
+      town: 'Fairfield County',
+      service: 'HVAC Service',
       content:
-        'Evolution Air came out the same day I called. The technician was professional, diagnosed the issue quickly, and had us back up and running in no time. Very fair pricing.',
-      image: 'https://randomuser.me/api/portraits/men/34.jpg',
+        'Evolution Air LLC provided exceptional service. Professional, prompt, and very knowledgeable. I highly recommend them for any HVAC needs in the area.',
+      image: 'https://randomuser.me/api/portraits/women/34.jpg',
     },
     {
-      name: 'Maria S.',
-      town: 'Greenwich, CT',
-      service: 'Furnace Installation',
+      name: 'Kessa S.',
+      town: 'Stamford, CT',
+      service: 'Emergency Repair',
       content:
-        'Replaced our old furnace before winter. Great experience from quote to installation. They explained all our options without any pressure. Highly recommend.',
+        'Quick response and great service. Evolution Air came out the same day and had everything back up and running. Very professional team.',
       image: 'https://randomuser.me/api/portraits/women/45.jpg',
     },
     {
-      name: 'David R.',
+      name: 'Kristen C.',
+      town: 'Greenwich, CT',
+      service: 'Residential HVAC',
+      content:
+        'Extremely satisfied with Evolution Air. They were thorough, explained everything clearly, and the work was done right the first time. Great company.',
+      image: 'https://randomuser.me/api/portraits/women/52.jpg',
+    },
+    {
+      name: 'Daniel M.',
       town: 'Darien, CT',
-      service: 'Emergency Heating',
+      service: 'AC Installation',
       content:
-        'Our heat went out on a cold night and Evolution Air picked up immediately. They had a tech at our door within 2 hours. Incredible emergency response.',
-      image: 'https://randomuser.me/api/portraits/men/52.jpg',
+        'Had a new AC installed by Evolution Air. The crew was clean, efficient, and professional. Fair pricing and excellent workmanship. Five stars.',
+      image: 'https://randomuser.me/api/portraits/men/29.jpg',
     },
     {
-      name: 'Jennifer L.',
+      name: 'Bryan D.',
       town: 'New Canaan, CT',
-      service: 'Maintenance Agreement',
-      content:
-        'Been using Evolution Air for 3 years now with their annual maintenance plan. Always on time, always thorough, and I never have to worry about my system.',
-      image: 'https://randomuser.me/api/portraits/women/29.jpg',
-    },
-    {
-      name: 'Michael T.',
-      town: 'Westchester, NY',
       service: 'Commercial HVAC',
       content:
-        'They handled our office building HVAC system professionally. On time, on budget, and great communication throughout the project.',
-      image: 'https://randomuser.me/api/portraits/men/73.jpg',
+        'Evolution Air handled our commercial space perfectly. On time, on budget, and great communication throughout. Will definitely use them again.',
+      image: 'https://randomuser.me/api/portraits/men/61.jpg',
     },
   ],
 
   // ─── Contact Form Services ────────────────────────────────
   contactFormServices: [
-    'Residential Heating',
-    'Residential Cooling / AC',
-    'Commercial HVAC',
-    'Preventative Maintenance Agreement',
+    'Maintenance Agreement',
+    'Free Estimate',
+    'Service Call',
+    'General Maintenance',
     'Emergency Service',
-    'System Replacement / New Installation',
+    'Commercial HVAC',
+    'Custom Duct Work',
     'Other / Not Sure',
   ],
 
-  // ─── FAQ ─────────────────────────────────────────────────
+  // ─── FAQ (real from residential page) ───────────────────
   faqs: [
+    {
+      question: 'Do you service all brands of HVAC equipment?',
+      answer:
+        'Yes. Evolution Air services and installs all major brands including Carrier, Amana, Trane, Lennox, Bryant, and York.',
+    },
     {
       question: 'Do you offer 24-hour emergency service?',
       answer:
-        'Yes. Evolution Air provides 24-hour emergency service for heating and cooling failures throughout Fairfield and Westchester County. Call (203) 724-9814 any time.',
+        'Yes. We provide 24-hour emergency response throughout Fairfield and Westchester County — including holidays and weekends.',
+    },
+    {
+      question: 'What happens if my air conditioner is freezing up?',
+      answer:
+        "A frozen A/C is typically caused by low refrigerant, poor airflow, or a dirty coil. Turn it off and call us — running a frozen unit can cause compressor damage. We'll diagnose and fix it same day.",
+    },
+    {
+      question: 'How often should I schedule preventative maintenance?',
+      answer:
+        'We recommend servicing your heater in the fall before winter, and your A/C in the spring before summer. Our maintenance agreements handle this automatically with reminders.',
     },
     {
       question: 'What areas do you serve?',
       answer:
-        'We serve Stamford and surrounding areas including Greenwich, Darien, New Canaan, Westport, Fairfield, and Westchester County, NY.',
-    },
-    {
-      question: 'Are you licensed and insured?',
-      answer:
-        'Yes. Evolution Air LLC is fully licensed and insured in Connecticut. We can provide documentation before any work begins.',
+        'We serve all of Fairfield County and Westchester County including Stamford, Greenwich, Darien, New Canaan, Westport, Norwalk, Fairfield, Wilton, Ridgefield, and surrounding towns.',
     },
     {
       question: 'Do you handle commercial HVAC?',
       answer:
-        'Yes. We service office buildings, retail spaces, and commercial properties throughout Fairfield and Westchester County.',
+        'Yes. We specialize in commercial HVAC for restaurants, retail, office buildings, and new construction — including custom duct work and sheet metal fabrication.',
     },
     {
-      question: 'What is a preventative maintenance agreement?',
+      question: 'What is included in your maintenance agreement?',
       answer:
-        'Our service agreement includes annual tune-ups, priority scheduling, discounts on parts and labor, and no overtime charges. Most members save $250+ per year.',
-    },
-    {
-      question: 'How do I know if I need repair or replacement?',
-      answer:
-        "Our technician will give you an honest assessment. If a repair makes sense, we'll say so. If a replacement is better long-term, we'll explain why — no pressure.",
+        'Annual tune-ups for A/C, boilers, furnaces, and humidifiers with detailed checklists. Plus 10% off all service calls, priority scheduling, and automated reminders.',
     },
   ],
 
   // ─── Service Area ─────────────────────────────────────────
   serviceAreaTowns: [
     'Stamford', 'Greenwich', 'Darien', 'New Canaan',
-    'Westport', 'Fairfield', 'Norwalk', 'Wilton',
-    'Ridgefield', 'Trumbull', 'Shelton', 'Stratford',
+    'Westport', 'Norwalk', 'Fairfield', 'Wilton',
+    'Ridgefield', 'Trumbull', 'Shelton', 'Westchester NY',
   ],
 
   // ─── Footer ──────────────────────────────────────────────
   footerTagline:
-    'Evolution Air LLC is a fully licensed & insured HVAC company in Stamford, CT. Serving residential and commercial customers in Fairfield & Westchester County.',
-  footerAwards: 'Google Rating 4.8 ⭐ (47 Reviews) · Licensed & Insured · 24/7 Emergency Service',
+    'Evolution Air LLC is a fully licensed & insured HVAC company in Stamford, CT. Serving residential and commercial customers throughout Fairfield & Westchester County with over 100 years of combined experience.',
+  footerAwards: 'Google Rating 4.8 ⭐ (47 Reviews) · Licensed & Insured · 24/7 Emergency Response',
 };
