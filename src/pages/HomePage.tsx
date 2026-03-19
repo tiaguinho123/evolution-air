@@ -5,10 +5,10 @@ import { useSiteConfig } from '../config/SiteConfigContext';
 import GoogleReviews from '../components/GoogleReviews';
 import TrustBadges from '../components/TrustBadges';
 
-// Real images and copy from evolutionairllc.com
+// Real hero image from evolutionairllc.com
 const HERO_IMAGE = 'https://evolutionairllc.com/wp-content/uploads/2020/08/MicrosoftTeams-image-1.jpg';
 
-// Real services from evolutionairllc.com — matching the 6 on the homepage
+// Real 6 services from evolutionairllc.com
 const SERVICES = [
   {
     title: 'Residential',
@@ -32,7 +32,7 @@ const SERVICES = [
     title: 'Custom Duct Work',
     img: 'https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-12.jpg',
     path: '/commercial',
-    desc: 'As a full-service HVAC company, we take our work to the next level by designing, fabricating, and installing customized setups, including the ductwork. Evolution Air is your expert source for custom ducting and sheet metal services.',
+    desc: 'As a full-service HVAC company, we take our work to the next level by designing, fabricating, and installing customized setups, including the ductwork. Evolution Air is your expert source for custom ducting.',
   },
   {
     title: 'Repair Services',
@@ -44,93 +44,111 @@ const SERVICES = [
     title: 'Preventative Maintenance',
     img: 'https://evolutionairllc.com/wp-content/uploads/2020/08/MicrosoftTeams-image-1.jpg',
     path: '/preventative-maintenance',
-    desc: 'Our maintenance program isn\'t just for specific customers: it\'s for everyone. Regular maintenance and upkeep of your system can greatly reduce costly repairs, increase efficiency, and extend the life of your system.',
+    desc: "Our maintenance program isn't just for specific customers: it's for everyone. Regular maintenance can greatly reduce costly repairs, increase efficiency, and extend the life of your system.",
   },
 ];
 
 export default function HomePage() {
-  const { phone, phoneFormatted, reviews, businessName, colors, tagline, hero } = useSiteConfig();
+  const { phone, phoneFormatted, reviews, businessName, colors } = useSiteConfig();
 
   return (
     <div>
-      {/* Hero — real image + real copy from evolutionairllc.com */}
+      {/* ─── Hero ─────────────────────────────────────────── */}
+      {/* pt-20 = fixed navbar height (h-20 = 80px) */}
       <section className="relative pt-20" aria-label="Hero">
-        <div className="relative overflow-hidden" style={{ height: '580px' }}>
+
+        {/* Container grows with content; image is absolute background */}
+        <div className="relative">
+
+          {/* Background image — fills parent absolutely */}
           <img
             src={HERO_IMAGE}
-            alt={`${businessName} — Heating & Air Conditioning in Stamford, Fairfield County CT`}
-            className="w-full h-full object-cover object-center"
+            alt={`${businessName} — Heating & Air Conditioning Stamford CT`}
+            className="absolute inset-0 w-full h-full object-cover object-center"
             fetchPriority="high"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-          <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                className="max-w-2xl"
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/10" />
+
+          {/* Content layer — relative so it drives the container height */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+                          py-14 sm:py-20
+                          min-h-[420px] sm:min-h-[500px]
+                          flex items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-xl w-full"
+            >
+              {/* Google Review badge */}
+              <a
+                href={reviews.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                           bg-white/10 border border-white/20 backdrop-blur-sm
+                           mb-6 hover:bg-white/15 transition-colors"
+                aria-label={`${reviews.rating} stars — ${reviews.count} Google Reviews`}
               >
-                {/* Google Review badge */}
-                <a
-                  href={reviews.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6"
-                  aria-label={`${reviews.rating} stars — ${reviews.count} Google Reviews`}
-                >
-                  <div className="flex gap-0.5" aria-hidden="true">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <span className="text-white text-sm font-semibold">
-                    {reviews.rating} · <span className="text-amber-300">{reviews.count} Google Reviews</span>
-                  </span>
-                </a>
-
-                {/* Real hero headline from evolutionairllc.com */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
-                  Fairfield County's Trusted Provider
-                  <br />
-                  <span style={{ color: colors.primaryHex }}>of Best-in-Class HVAC Solutions</span>
-                </h1>
-
-                {/* Real hero subtext from evolutionairllc.com */}
-                <p className="text-base md:text-lg text-white/85 mb-8 leading-relaxed max-w-xl">
-                  Evolution Air LLC is a full-service HVAC company based out of Stamford, CT. Fully licensed &amp; insured. We proudly service Fairfield &amp; Westchester County. No job is too small — call today for a free estimate!
-                </p>
-
-                {/* CTAs */}
-                <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
-                  <Link
-                    to="/preventative-maintenance"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-4 text-white font-bold rounded-xl text-sm md:text-base shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl active:scale-95 active:translate-y-0"
-                    style={{ backgroundColor: colors.primaryHex }}
-                  >
-                    <Calendar className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
-                    <span>Request A Maintenance Agreement</span>
-                  </Link>
-                  <a
-                    href={`tel:${phone}`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-slate-900 font-bold rounded-xl text-base shadow-lg whitespace-nowrap transition-all duration-200 hover:-translate-y-1 hover:shadow-xl active:scale-95 active:translate-y-0"
-                  >
-                    <Phone className="w-5 h-5 flex-shrink-0" style={{ color: colors.primaryHex }} aria-hidden="true" />
-                    {phoneFormatted}
-                  </a>
+                <div className="flex gap-0.5" aria-hidden="true">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
                 </div>
-              </motion.div>
-            </div>
+                <span className="text-white text-sm font-semibold">
+                  {reviews.rating} · <span className="text-amber-300">{reviews.count} Google Reviews</span>
+                </span>
+              </a>
+
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
+                Fairfield County's Trusted Provider
+                <br />
+                <span style={{ color: colors.primaryHex }}>of Best-in-Class HVAC Solutions</span>
+              </h1>
+
+              {/* Subtext */}
+              <p className="text-sm sm:text-base text-white/85 mb-8 leading-relaxed">
+                Full-service HVAC company based in Stamford, CT. Fully licensed &amp; insured.
+                Serving Fairfield &amp; Westchester County. Call today for a free estimate!
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/preventative-maintenance"
+                  className="inline-flex items-center justify-center gap-2
+                             px-6 py-3.5 text-white font-bold rounded-xl text-sm
+                             shadow-lg transition-all duration-200
+                             hover:-translate-y-1 hover:shadow-xl active:scale-95"
+                  style={{ backgroundColor: colors.primaryHex }}
+                >
+                  <Calendar className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                  Request A Maintenance Agreement
+                </Link>
+                <a
+                  href={`tel:${phone}`}
+                  className="inline-flex items-center justify-center gap-2
+                             px-6 py-3.5 bg-white text-slate-900 font-bold rounded-xl text-sm
+                             shadow-lg whitespace-nowrap transition-all duration-200
+                             hover:-translate-y-1 hover:shadow-xl active:scale-95"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0" style={{ color: colors.primaryHex }} aria-hidden="true" />
+                  {phoneFormatted}
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Trust Badges */}
+      {/* ─── Trust Badges ─── */}
       <TrustBadges />
 
-      {/* About Section — real copy from evolutionairllc.com */}
+      {/* ─── About ─── */}
       <section className="py-16 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -148,10 +166,10 @@ export default function HomePage() {
               </p>
               <Link
                 to="/about-us"
-                className="inline-flex items-center font-bold transition-colors"
+                className="inline-flex items-center font-bold transition-all duration-200 hover:gap-2 gap-1"
                 style={{ color: colors.primaryHex }}
               >
-                Learn More About Us →
+                Learn More About Us <span className="transition-transform duration-200">→</span>
               </Link>
             </div>
             <img
@@ -165,7 +183,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Grid — real 6 services from evolutionairllc.com */}
+      {/* ─── Services Grid ─── */}
       <section className="py-20 bg-slate-50" id="services" aria-labelledby="services-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -207,7 +225,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Strip — real copy from evolutionairllc.com */}
+      {/* ─── CTA Strip ─── */}
       <section className="py-10 text-white text-center" style={{ backgroundColor: colors.primaryHex }}>
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-lg font-semibold mb-4">
@@ -223,10 +241,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Google Reviews */}
+      {/* ─── Reviews ─── */}
       <GoogleReviews />
 
-      {/* Emergency CTA */}
+      {/* ─── Emergency CTA ─── */}
       <div className="py-12" style={{ backgroundColor: colors.dark }}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-2xl font-extrabold text-white mb-2">24 Hour Emergency Service</p>
