@@ -1,30 +1,30 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import { useSiteConfig } from '../config/SiteConfigContext';
 
+// Real Evolution Air logo from evolutionairllc.com
+const LOGO_URL = 'https://evolutionairllc.com/wp-content/uploads/2019/11/evolution-air-logo_horizontal-3-300x82.png';
 
-const LOGO_URL = 'https://evolutionairllc.com/wp-content/uploads/2019/11/evolution-air-logo_horizontal-3.png';
-
-const serviceLinks = [
-  { label: 'Residential HVAC', path: '/heating' },
-  { label: 'Commercial HVAC', path: '/cooling' },
-  { label: 'Preventative Maintenance', path: '/indoor-air-quality' },
-  { label: 'Emergency Service', path: '/comfort-controls' },
+// Exact navigation from evolutionairllc.com
+const navLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'Residential', path: '/residential' },
+  { label: 'Commercial', path: '/commercial' },
+  { label: 'Preventative Maintenance', path: '/preventative-maintenance' },
+  { label: 'About Us', path: '/about-us' },
+  { label: 'Contact Us', path: '/contact-us' },
 ];
 
 export default function Navbar() {
   const cfg = useSiteConfig();
-  const primaryColor = cfg.colors.primaryHex;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setMobileMenuOpen(false);
-    setServicesOpen(false);
   }, [location]);
 
   useEffect(() => {
@@ -36,8 +36,8 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm font-semibold transition-colors px-1 pb-1 border-b-2 ${
       isActive
-        ? `text-[${primaryColor}] border-[${primaryColor}]`
-        : `text-slate-700 border-transparent hover:text-[${primaryColor}]`
+        ? `border-[${cfg.colors.primaryHex}] text-[${cfg.colors.primaryHex}]`
+        : 'text-slate-700 border-transparent hover:text-slate-900'
     }`;
 
   return (
@@ -45,8 +45,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* ─── Real NEAS Logo ─── */}
-          <Link to="/" className="flex-shrink-0" aria-label={`${cfg.businessName} — Home`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          {/* Company Logo */}
+          <Link to="/" aria-label={`${cfg.businessName} — Home`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex-shrink-0">
             <img
               src={cfg.logoUrl ?? LOGO_URL}
               alt={`${cfg.businessName} — Heating & Cooling`}
@@ -55,64 +55,35 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* ─── Desktop Nav ─── */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-            <NavLink to="/" end className={navLinkClass} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>HOME</NavLink>
-
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <button
-                className={`text-sm font-semibold flex items-center gap-1 pb-1 border-b-2 transition-colors ${
-                  location.pathname.includes('/heating') || location.pathname.includes('/cooling') || location.pathname.includes('/indoor') || location.pathname.includes('/comfort')
-                    ? `text-[${primaryColor}] border-[${primaryColor}]`
-                    : `text-slate-700 border-transparent hover:text-[${primaryColor}]`
-                }`}
-                aria-expanded={servicesOpen}
-                aria-haspopup="true"
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                end={link.path === '/'}
+                className={navLinkClass}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
-                SERVICES <ChevronDown className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
-              </button>
-              {servicesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-52 bg-white border border-slate-100 rounded-xl shadow-xl py-2 z-50">
-                  {serviceLinks.map((s) => (
-                    <NavLink
-                      key={s.path}
-                      to={s.path}
-                      className={({ isActive }) =>
-                        `block px-4 py-2.5 text-sm font-medium transition-colors ${
-                          isActive ? `text-[${primaryColor}] bg-blue-50` : `text-slate-700 hover:text-[${primaryColor}] hover:bg-slate-50`
-                        }`
-                      }
-                    >
-                      {s.label}
-                    </NavLink>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <NavLink to="/financing" className={navLinkClass}>FINANCING</NavLink>
-            <NavLink to="/about-us" className={navLinkClass}>ABOUT US</NavLink>
-            <NavLink to="/contact-us" className={navLinkClass}>CONTACT US</NavLink>
+                {link.label}
+              </NavLink>
+            ))}
           </nav>
 
-          {/* ─── Phone CTA ─── */}
+          {/* Phone CTA */}
           <a
             href={`tel:${cfg.phone}`}
             className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white transition-colors shadow"
             style={{ backgroundColor: cfg.colors.primaryHex }}
+            aria-label={`Call ${cfg.phoneFormatted}`}
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
             {cfg.phoneFormatted}
           </a>
 
-          {/* ─── Mobile Toggle ─── */}
+          {/* Mobile Toggle */}
           <button
-            className="md:hidden p-2 text-slate-700"
+            className="lg:hidden p-2 text-slate-700"
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -122,20 +93,20 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ─── Mobile Menu ─── */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 shadow-lg">
+        <div className="lg:hidden bg-white border-t border-slate-100 px-4 py-4 shadow-lg">
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-            <NavLink to="/" end className={navLinkClass}>HOME</NavLink>
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-3 mb-1 px-1">Services</p>
-            {serviceLinks.map((s) => (
-              <NavLink key={s.path} to={s.path} className={navLinkClass} style={{ paddingLeft: '0.75rem' }}>
-                {s.label}
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                end={link.path === '/'}
+                className={navLinkClass}
+              >
+                {link.label}
               </NavLink>
             ))}
-            <NavLink to="/financing" className={navLinkClass}>FINANCING</NavLink>
-            <NavLink to="/about-us" className={navLinkClass}>ABOUT US</NavLink>
-            <NavLink to="/contact-us" className={navLinkClass}>CONTACT US</NavLink>
             <a
               href={`tel:${cfg.phone}`}
               className="mt-3 flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-bold text-white"

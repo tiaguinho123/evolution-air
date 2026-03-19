@@ -22,6 +22,7 @@ export interface SiteTestimonial {
   service: string;          // Service they used: "Emergency Heating Repair"
   content: string;          // Quote body
   image: string;            // Avatar URL
+  platform?: string;        // Optional: "Google" | "Facebook"
 }
 
 export interface SiteService {

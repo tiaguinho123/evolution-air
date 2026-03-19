@@ -66,7 +66,7 @@ export const config: SiteConfig = {
       'https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-13.jpg',
       'https://evolutionairllc.com/wp-content/uploads/2020/08/MicrosoftTeams-image-3-e1598012087796.jpg',
     ],
-    primaryCTA: 'Get a Free Estimate',
+    primaryCTA: 'Request A Preventative Maintenance Agreement',
     emergencyText: '24-Hour Emergency Service Available',
   },
 
@@ -228,24 +228,27 @@ export const config: SiteConfig = {
       town: 'Fairfield County',
       service: 'HVAC Service',
       content:
-        'Evolution Air LLC provided exceptional service. Professional, prompt, and very knowledgeable. I highly recommend them for any HVAC needs in the area.',
+        'Professional and friendly, the workers from Evolution Air were on time and were able to get our outdated central air system back up and running in one visit. They offered suggestions for replacement but weren\'t pushy about it. Will use them again for sure!',
       image: 'https://randomuser.me/api/portraits/women/34.jpg',
+      platform: 'Facebook',
     },
     {
       name: 'Kessa S.',
       town: 'Stamford, CT',
-      service: 'Emergency Repair',
+      service: 'HVAC, Water Heater & Boiler',
       content:
-        'Quick response and great service. Evolution Air came out the same day and had everything back up and running. Very professional team.',
+        'I was completely overwhelmed by the scope of repairs I needed for my house - HVAC, water heater, and boiler. Mike and his crew were incredibly patient with my questions and really helped me understand what I was buying. The job went smoothly mostly because of their extreme professionalism. I can\'t say enough good things about working with Mike and his team. I felt like he really treated my house like his own.',
       image: 'https://randomuser.me/api/portraits/women/45.jpg',
+      platform: 'Google',
     },
     {
       name: 'Kristen C.',
       town: 'Greenwich, CT',
-      service: 'Residential HVAC',
+      service: 'HVAC Maintenance',
       content:
-        'Extremely satisfied with Evolution Air. They were thorough, explained everything clearly, and the work was done right the first time. Great company.',
+        'I highly recommend Evolution Air! I can\'t speak highly enough about them. I have had a positive experience with everyone from booking the appointment to the technicians to the follow up call with the owner, Michael. The technicians were professional, kind and extremely knowledgeable. They went above and beyond to be sure we felt comfortable having people in our home in the middle of a pandemic. Switching to Evolution Air for our HVAC maintenance was the best decision we\'ve made.',
       image: 'https://randomuser.me/api/portraits/women/52.jpg',
+      platform: 'Google',
     },
     {
       name: 'Daniel M.',
@@ -254,14 +257,7 @@ export const config: SiteConfig = {
       content:
         'Had a new AC installed by Evolution Air. The crew was clean, efficient, and professional. Fair pricing and excellent workmanship. Five stars.',
       image: 'https://randomuser.me/api/portraits/men/29.jpg',
-    },
-    {
-      name: 'Bryan D.',
-      town: 'New Canaan, CT',
-      service: 'Commercial HVAC',
-      content:
-        'Evolution Air handled our commercial space perfectly. On time, on budget, and great communication throughout. Will definitely use them again.',
-      image: 'https://randomuser.me/api/portraits/men/61.jpg',
+      platform: 'Google',
     },
   ],
 
