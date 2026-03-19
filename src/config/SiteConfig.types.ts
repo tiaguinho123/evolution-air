@@ -73,6 +73,7 @@ export interface SiteConfig {
     line2: string;            // "Air Systems"
   };
   logoIcon: string;           // Lucide icon name: "Wind" | "Flame" | "Snowflake"
+  logoUrl?: string;           // Optional: real logo image URL from client's site
 
   // ─── Colors ──────────────────────────────────────────────
   colors: {
@@ -110,6 +111,7 @@ export interface SiteConfig {
     valueProp: string;        // Short tagline: "Family-owned. Licensed. Honest pricing."
     subText: string;          // Geo sentence below value prop
     heroBgUrl: string;        // Unsplash or custom image URL
+    heroImages?: string[];     // Optional: multiple real photos from client's site (rotating)
     primaryCTA: string;       // "Get My Free Estimate"
     emergencyText: string;    // "No heat or AC? We respond fast."
   };

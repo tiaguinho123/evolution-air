@@ -18,6 +18,7 @@ export const config: SiteConfig = {
     line2: 'Heating & Cooling',
   },
   logoIcon: 'Wind',
+  logoUrl: 'https://evolutionairllc.com/wp-content/uploads/2019/11/evolution-air-logo_horizontal-3.png',
 
   // ─── Brand Colors ─────────────────────────────────────────
   colors: {
@@ -56,7 +57,15 @@ export const config: SiteConfig = {
     subText:
       'Full-service HVAC company based in Stamford, CT. Fully licensed & insured. Serving Fairfield & Westchester County since 2010.',
     heroBgUrl:
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop',
+      'https://evolutionairllc.com/wp-content/uploads/2020/09/condenser-repair.jpg',
+    heroImages: [
+      'https://evolutionairllc.com/wp-content/uploads/2020/08/MicrosoftTeams-image-1.jpg',
+      'https://evolutionairllc.com/wp-content/uploads/2020/09/condenser-repair.jpg',
+      'https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-11.jpg',
+      'https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-12.jpg',
+      'https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-13.jpg',
+      'https://evolutionairllc.com/wp-content/uploads/2020/08/MicrosoftTeams-image-3-e1598012087796.jpg',
+    ],
     primaryCTA: 'Get a Free Estimate',
     emergencyText: '24-Hour Emergency Service Available',
   },

@@ -5,6 +5,8 @@ import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { useSiteConfig } from '../config/SiteConfigContext';
 
 
+const LOGO_URL = 'https://evolutionairllc.com/wp-content/uploads/2019/11/evolution-air-logo_horizontal-3.png';
+
 const serviceLinks = [
   { label: 'Residential HVAC', path: '/heating' },
   { label: 'Commercial HVAC', path: '/cooling' },
@@ -45,10 +47,12 @@ export default function Navbar() {
 
           {/* ─── Real NEAS Logo ─── */}
           <Link to="/" className="flex-shrink-0" aria-label={`${cfg.businessName} — Home`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="flex flex-col leading-tight">
-              <span className="text-lg font-extrabold tracking-tight" style={{ color: cfg.colors.primaryHex }}>{cfg.logoText.line1}</span>
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{cfg.logoText.line2}</span>
-            </div>
+            <img
+              src={cfg.logoUrl ?? LOGO_URL}
+              alt={`${cfg.businessName} — Heating & Cooling`}
+              className="h-14 w-auto object-contain"
+              fetchPriority="high"
+            />
           </Link>
 
           {/* ─── Desktop Nav ─── */}
