@@ -4,17 +4,17 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { useSiteConfig } from '../config/SiteConfigContext';
 
-const NEAS_LOGO_URL = 'https://neas-hvac.com/wp-content/uploads/2018/11/NEAS-LOGO.png';
 
 const serviceLinks = [
-  { label: 'Heating', path: '/heating' },
-  { label: 'Cooling', path: '/cooling' },
-  { label: 'Indoor Air Quality', path: '/indoor-air-quality' },
-  { label: 'Comfort Controls', path: '/comfort-controls' },
+  { label: 'Residential HVAC', path: '/heating' },
+  { label: 'Commercial HVAC', path: '/cooling' },
+  { label: 'Preventative Maintenance', path: '/indoor-air-quality' },
+  { label: 'Emergency Service', path: '/comfort-controls' },
 ];
 
 export default function Navbar() {
   const cfg = useSiteConfig();
+  const primaryColor = cfg.colors.primaryHex;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,8 +34,8 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm font-semibold transition-colors px-1 pb-1 border-b-2 ${
       isActive
-        ? 'text-[#CE1126] border-[#CE1126]'
-        : 'text-slate-700 border-transparent hover:text-[#CE1126]'
+        ? `text-[${primaryColor}] border-[${primaryColor}]`
+        : `text-slate-700 border-transparent hover:text-[${primaryColor}]`
     }`;
 
   return (
@@ -44,13 +44,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
 
           {/* ─── Real NEAS Logo ─── */}
-          <Link to="/" className="flex-shrink-0" aria-label="New England Air Systems — Home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img
-              src={NEAS_LOGO_URL}
-              alt="New England Air Systems, LLC — Heating & Air Conditioning"
-              className="h-16 w-auto object-contain"
-              fetchPriority="high"
-            />
+          <Link to="/" className="flex-shrink-0" aria-label={`${cfg.businessName} — Home`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="flex flex-col leading-tight">
+              <span className="text-lg font-extrabold tracking-tight" style={{ color: cfg.colors.primaryHex }}>{cfg.logoText.line1}</span>
+              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{cfg.logoText.line2}</span>
+            </div>
           </Link>
 
           {/* ─── Desktop Nav ─── */}
@@ -66,8 +64,8 @@ export default function Navbar() {
               <button
                 className={`text-sm font-semibold flex items-center gap-1 pb-1 border-b-2 transition-colors ${
                   location.pathname.includes('/heating') || location.pathname.includes('/cooling') || location.pathname.includes('/indoor') || location.pathname.includes('/comfort')
-                    ? 'text-[#CE1126] border-[#CE1126]'
-                    : 'text-slate-700 border-transparent hover:text-[#CE1126]'
+                    ? `text-[${primaryColor}] border-[${primaryColor}]`
+                    : `text-slate-700 border-transparent hover:text-[${primaryColor}]`
                 }`}
                 aria-expanded={servicesOpen}
                 aria-haspopup="true"
@@ -82,7 +80,7 @@ export default function Navbar() {
                       to={s.path}
                       className={({ isActive }) =>
                         `block px-4 py-2.5 text-sm font-medium transition-colors ${
-                          isActive ? 'text-[#CE1126] bg-red-50' : 'text-slate-700 hover:text-[#CE1126] hover:bg-slate-50'
+                          isActive ? `text-[${primaryColor}] bg-blue-50` : `text-slate-700 hover:text-[${primaryColor}] hover:bg-slate-50`
                         }`
                       }
                     >
@@ -102,7 +100,7 @@ export default function Navbar() {
           <a
             href={`tel:${cfg.phone}`}
             className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white transition-colors shadow"
-            style={{ backgroundColor: '#CE1126' }}
+            style={{ backgroundColor: cfg.colors.primaryHex }}
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
             {cfg.phoneFormatted}
@@ -137,7 +135,7 @@ export default function Navbar() {
             <a
               href={`tel:${cfg.phone}`}
               className="mt-3 flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-bold text-white"
-              style={{ backgroundColor: '#CE1126' }}
+              style={{ backgroundColor: cfg.colors.primaryHex }}
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
               {cfg.phoneFormatted}
