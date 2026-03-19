@@ -3,19 +3,16 @@ import { Link } from 'react-router-dom';
 import { CheckCircle2, Phone } from 'lucide-react';
 import { useSiteConfig } from '../config/SiteConfigContext';
 
-// Real NEAS Vimeo video extracted from neas-hvac.com/about-us/
-const NEAS_VIMEO_URL = 'https://player.vimeo.com/video/498457551?title=0&byline=0&portrait=0';
-
 export default function AboutPage() {
-  const { phone, phoneFormatted } = useSiteConfig();
+  const { phone, phoneFormatted, colors } = useSiteConfig();
 
   return (
     <div className="pt-20">
       {/* Banner */}
       <div className="relative h-64 md:h-80 overflow-hidden">
         <img
-          src="https://neas-hvac.com/wp-content/uploads/2018/11/462833_280179332059834_678440108_o.jpg"
-          alt="New England Air Systems — About Us"
+          src="https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-12.jpg"
+          alt="Evolution Air LLC — About Us"
           className="w-full h-full object-cover object-center"
           fetchPriority="high"
           decoding="async"
@@ -40,9 +37,7 @@ export default function AboutPage() {
       <div className="bg-slate-50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <nav className="text-sm text-slate-500" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-[#CE1126] transition-colors">
-              Home
-            </Link>
+            <Link to="/" className="hover:underline transition-colors">Home</Link>
             <span className="mx-2">›</span>
             <span className="text-slate-700 font-medium">About Us</span>
           </nav>
@@ -60,46 +55,39 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                New England Air Systems, LLC
+                Evolution Air LLC
               </h2>
               <div
                 className="w-12 h-1 rounded-full mb-8"
-                style={{ backgroundColor: '#CE1126' }}
+                style={{ backgroundColor: colors.primaryHex }}
                 aria-hidden="true"
               />
 
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                NEW ENGLAND AIR SYSTEMS is a family owned heating &amp; air conditioning company
-                located in Danbury, CT. We have been servicing local homeowners for more than 20
-                years.
+                Evolution Air LLC is a tight-knit group of HVAC professionals with over <strong>100 years of combined experience</strong>. We are a full-service HVAC company based in Stamford, CT, serving Fairfield and Westchester County since 2010.
               </p>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                We are an award-winning HVAC company that delivers unparalleled quality in
-                installing and maintaining all types of residential heating and air conditioning
-                systems. Our team of licensed technicians is committed to providing honest,
-                transparent service with upfront pricing — no surprises, no upsells.
+                We specialize in retrofits and maintaining equipment for residential, commercial, industrial, and institutional sectors. Our philosophy is simple: focus on long-term equipment life and energy efficiency — not on being the lowest bidder.
               </p>
               <p className="text-slate-600 mb-10 leading-relaxed">
-                As a family-owned business, our reputation is everything. Every technician who
-                enters your home represents the NEAS name, and we take that responsibility
-                seriously. We treat every home like it's our own.
+                <strong>"If you're not comfortable, we're not comfortable."</strong> That's more than a slogan — it's how we approach every job, from a routine tune-up to a full commercial HVAC system installation.
               </p>
 
               <h3 className="text-xl font-bold text-slate-900 mb-4">What Sets Us Apart:</h3>
               <ul className="space-y-3 mb-10">
                 {[
-                  'Family-owned and operated in Danbury, CT since 2003',
-                  'CT Licensed: HTG.0404292-S1 · Fully insured',
-                  '24-Hour Emergency Service, 365 days a year',
-                  'Sales, Service, and Installation — all in one call',
-                  'Expertise.com Best HVAC Professionals in Danbury 2021',
-                  'All major brands: Carrier, Lennox, Trane, Rheem & more',
-                  'Transparent pricing — full estimate before any work begins',
+                  'Over 100 years of combined HVAC experience',
+                  'Fully licensed & insured — Stamford, CT since 2010',
+                  '24-Hour Emergency Service — including holidays and weekends',
+                  'ONE CALL FOR ALL — residential, commercial, industrial',
+                  'Specialists in retrofits and custom duct work',
+                  'All major brands: Carrier, Trane, Lennox, Bryant, York, Amana',
+                  'Transparent pricing — upfront estimate before any work begins',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2
                       className="w-5 h-5 flex-shrink-0 mt-0.5"
-                      style={{ color: '#CE1126' }}
+                      style={{ color: colors.primaryHex }}
                       aria-hidden="true"
                     />
                     <span className="text-slate-700">{item}</span>
@@ -110,59 +98,50 @@ export default function AboutPage() {
               <a
                 href={`tel:${phone}`}
                 className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold rounded-xl text-lg"
-                style={{ backgroundColor: '#CE1126' }}
+                style={{ backgroundColor: colors.primaryHex }}
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 Call Us: {phoneFormatted}
               </a>
             </motion.div>
 
-            {/* Right — Vimeo video from their real site + Award + License */}
+            {/* Right — Images & Info */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="space-y-8"
             >
-              {/* ─── Real NEAS Vimeo Video ─── */}
-              <div
-                className="relative w-full overflow-hidden rounded-2xl shadow-lg bg-black"
-                style={{ paddingTop: '56.25%' /* 16:9 */ }}
-              >
-                <iframe
-                  src={NEAS_VIMEO_URL}
-                  title="New England Air Systems — Company Video"
-                  className="absolute inset-0 w-full h-full"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
+              {/* Real photo */}
+              <img
+                src="https://evolutionairllc.com/wp-content/uploads/2020/09/MicrosoftTeams-image-11.jpg"
+                alt="Evolution Air LLC technicians working in Fairfield County"
+                className="w-full rounded-2xl object-cover shadow-lg"
+                style={{ maxHeight: '320px' }}
+                loading="lazy"
+                decoding="async"
+              />
 
-              {/* Award */}
-              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 text-center">
-                <img
-                  src="https://neas-hvac.com/wp-content/uploads/2021/01/Award_2021_transparent-1.png"
-                  alt="Expertise.com Best HVAC Professionals in Danbury 2021"
-                  className="h-36 mx-auto object-contain mb-4"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <p className="text-slate-600 text-sm font-medium">
-                  Recognized as one of the Best HVAC Professionals in Danbury by Expertise.com
-                </p>
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 text-center">
+                  <p className="text-4xl font-extrabold mb-1" style={{ color: colors.primaryHex }}>100+</p>
+                  <p className="text-slate-600 text-sm font-medium">Years Combined Experience</p>
+                </div>
+                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 text-center">
+                  <p className="text-4xl font-extrabold mb-1" style={{ color: colors.primaryHex }}>15+</p>
+                  <p className="text-slate-600 text-sm font-medium">Years Serving Fairfield County</p>
+                </div>
               </div>
 
               {/* License Box */}
-              <div className="rounded-2xl p-6 text-white" style={{ backgroundColor: '#003DA5' }}>
-                <h4 className="font-bold text-lg mb-3">Fully Licensed & Insured</h4>
+              <div className="rounded-2xl p-6 text-white" style={{ backgroundColor: colors.dark }}>
+                <h4 className="font-bold text-lg mb-3">Fully Licensed &amp; Insured</h4>
                 <p className="text-white/80 mb-2">
-                  CT HVAC License:{' '}
-                  <strong className="text-white">HTG.0404292-S1</strong>
+                  CT Licensed HVAC Contractor — <strong className="text-white">fully insured</strong>
                 </p>
                 <p className="text-white/80 text-sm">
-                  We carry full liability insurance and workers' compensation. Happy to provide
-                  documentation before any work begins.
+                  We carry full liability insurance and workers' compensation. Happy to provide documentation before any work begins.
                 </p>
               </div>
             </motion.div>
