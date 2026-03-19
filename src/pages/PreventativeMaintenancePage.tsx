@@ -79,7 +79,7 @@ export default function PreventativeMaintenancePage() {
               </p>
               <a
                 href={`tel:${phone}`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-bold mb-6 mr-4"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-bold mb-6 mr-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
                 style={{ backgroundColor: colors.primaryHex }}
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
@@ -87,7 +87,7 @@ export default function PreventativeMaintenancePage() {
               </a>
               <Link
                 to="/contact-us"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
                 style={{ borderColor: colors.primaryHex, color: colors.primaryHex }}
               >
                 Request An Agreement

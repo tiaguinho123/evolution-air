@@ -103,21 +103,21 @@ export default function HomePage() {
                   Evolution Air LLC is a full-service HVAC company based out of Stamford, CT. Fully licensed &amp; insured. We proudly service Fairfield &amp; Westchester County. No job is too small — call today for a free estimate!
                 </p>
 
-                {/* CTAs — real button from evolutionairllc.com */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                {/* CTAs */}
+                <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
                   <Link
                     to="/preventative-maintenance"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-bold rounded-lg text-base transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-4 text-white font-bold rounded-xl text-sm md:text-base shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl active:scale-95 active:translate-y-0"
                     style={{ backgroundColor: colors.primaryHex }}
                   >
-                    <Calendar className="w-5 h-5" aria-hidden="true" />
-                    Request A Preventative Maintenance Agreement
+                    <Calendar className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                    <span>Request A Maintenance Agreement</span>
                   </Link>
                   <a
                     href={`tel:${phone}`}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 font-bold rounded-lg text-base shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-slate-900 font-bold rounded-xl text-base shadow-lg whitespace-nowrap transition-all duration-200 hover:-translate-y-1 hover:shadow-xl active:scale-95 active:translate-y-0"
                   >
-                    <Phone className="w-5 h-5" style={{ color: colors.primaryHex }} aria-hidden="true" />
+                    <Phone className="w-5 h-5 flex-shrink-0" style={{ color: colors.primaryHex }} aria-hidden="true" />
                     {phoneFormatted}
                   </a>
                 </div>
@@ -195,10 +195,10 @@ export default function HomePage() {
                   <p className="text-slate-600 text-sm mb-4 leading-relaxed">{svc.desc}</p>
                   <Link
                     to={svc.path}
-                    className="inline-flex items-center text-sm font-bold transition-colors"
+                    className="inline-flex items-center gap-1 text-sm font-bold transition-all duration-200 hover:gap-2"
                     style={{ color: colors.primaryHex }}
                   >
-                    Learn More →
+                    Learn More <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </Link>
                 </div>
               </motion.div>
@@ -215,7 +215,7 @@ export default function HomePage() {
           </p>
           <Link
             to="/contact-us"
-            className="inline-block bg-white font-bold px-8 py-3 rounded-xl transition-opacity hover:opacity-90"
+            className="inline-block bg-white font-bold px-8 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
             style={{ color: colors.primaryHex }}
           >
             Contact Us
@@ -233,7 +233,7 @@ export default function HomePage() {
           <p className="text-white/80 mb-6">No heat or cooling? We respond fast — any time of day or night.</p>
           <a
             href={`tel:${phone}`}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-lg font-bold text-white border-2 border-white hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-lg font-bold text-white border-2 border-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
           >
             <Phone className="w-5 h-5" />
             Emergency Call 24/7 — {phoneFormatted}

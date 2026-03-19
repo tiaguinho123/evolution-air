@@ -81,7 +81,7 @@ export default function AboutPage() {
 
               <a
                 href={`tel:${phone}`}
-                className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold rounded-xl text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold rounded-xl text-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
                 style={{ backgroundColor: colors.primaryHex }}
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
