@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { Phone, Calendar, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -5,40 +6,39 @@ import { useSiteConfig } from '../config/SiteConfigContext';
 import TrustBadges from '../components/TrustBadges';
 import GoogleReviews from '../components/GoogleReviews';
 
-// Real NEAS images scraped from neas-hvac.com
-// Hero: the ACTUAL building & van photo shown on their homepage
-const NEAS_HERO_IMAGE =
-  'https://neas-hvac.com/wp-content/uploads/2018/11/462833_280179332059834_678440108_o.jpg';
+// Evolution Air LLC — hero and service images
+const HERO_IMAGE =
+  'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop';
 
 const services = [
   {
-    title: 'Heating',
-    img: 'https://neas-hvac.com/wp-content/uploads/2019/01/HEATING.jpg',
+    title: 'Residential HVAC',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
     path: '/heating',
-    desc: 'Service and installation of oil and gas fired furnaces, heat pump systems, and boilers.',
+    desc: 'Complete heating and cooling installations, repairs, and maintenance for your home.',
   },
   {
-    title: 'Cooling',
-    img: 'https://neas-hvac.com/wp-content/uploads/2019/01/Cooling.jpg',
+    title: 'Commercial HVAC',
+    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop',
     path: '/cooling',
-    desc: 'Precise temperature control, ideal humidity levels, and peak efficiency year-round.',
+    desc: 'Large-scale HVAC systems for commercial properties throughout Fairfield County.',
   },
   {
-    title: 'Indoor Air Quality',
-    img: 'https://neas-hvac.com/wp-content/uploads/2019/01/180404-better-stock-woman-blowing-nose-ew-1250p_099d7e00064bb4e46bb983b8ce7e3f24.fit-760w.jpg',
+    title: 'Preventative Maintenance',
+    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
     path: '/indoor-air-quality',
-    desc: 'Air purification, filtration, and humidity-control systems for a healthier home.',
+    desc: 'Maintenance agreements to keep your system running efficiently and prevent costly failures.',
   },
   {
-    title: 'Comfort Controls',
-    img: 'https://neas-hvac.com/wp-content/uploads/2019/01/iComfort-S30-Lifestyle-4-1024x565-1024x565.jpg',
+    title: 'Emergency Service',
+    img: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=800&auto=format&fit=crop',
     path: '/comfort-controls',
-    desc: 'Smart thermostats and automation for complete HVAC management.',
+    desc: '24/7 emergency HVAC response — no overtime charges for members.',
   },
 ];
 
 export default function HomePage() {
-  const { phone, phoneFormatted, reviews } = useSiteConfig();
+  const { phone, phoneFormatted, reviews, businessName, tagline, colors } = useSiteConfig();
 
   return (
     <div>
@@ -48,8 +48,8 @@ export default function HomePage() {
         <div className="relative overflow-hidden" style={{ height: '540px' }}>
           {/* Real NEAS building & vans photo */}
           <img
-            src={NEAS_HERO_IMAGE}
-            alt="New England Air Systems — building and work vans in Danbury, CT"
+            src={HERO_IMAGE}
+            alt={`${businessName} — HVAC service in Stamford, CT`}
             className="w-full h-full object-cover object-center"
             fetchPriority="high"
             decoding="async"
@@ -85,15 +85,15 @@ export default function HomePage() {
                 </a>
 
                 <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
-                  NEW ENGLAND AIR SYSTEMS
+                  {businessName.toUpperCase()}
                   <br />
-                  <span style={{ color: '#CE1126' }}>Heating & Air Conditioning</span>
+                  <span style={{ color: colors.primaryHex }}>Heating &amp; Air Conditioning</span>
                 </h1>
                 <p className="text-xl text-white/90 mb-3 font-medium">
-                  Family-Owned • Danbury, CT
+                  {tagline}
                 </p>
                 <p className="text-base text-white/75 mb-8">
-                  Serving local homeowners for more than 20 years.
+                  Licensed &amp; Insured • Residential &amp; Commercial
                   <br />
                   Sales • Service • Installation — 24 Hour Emergency Service
                 </p>
@@ -103,7 +103,7 @@ export default function HomePage() {
                   <Link
                     to="/contact-us"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-bold rounded-lg text-lg transition-colors shadow-lg"
-                    style={{ backgroundColor: '#CE1126' }}
+                    style={{ backgroundColor: colors.primaryHex }}
                   >
                     <Calendar className="w-5 h-5" aria-hidden="true" />
                     Get a Free Estimate
@@ -130,24 +130,16 @@ export default function HomePage() {
       {/* ─── About Blurb ─── */}
       <section className="py-16 bg-white border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#CE1126' }}>
+          <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: colors.primaryHex }}>
             About Us
           </p>
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-5">NEW ENGLAND AIR SYSTEMS</h2>
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-5">{businessName.toUpperCase()}</h2>
           <p className="text-lg text-slate-600 mb-4 leading-relaxed">
-            NEW ENGLAND AIR SYSTEMS is a family owned heating &amp; air conditioning company
-            located in Danbury, CT.
+            {businessName} is a fully licensed &amp; insured HVAC company based in Stamford, CT.
           </p>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-            We have been servicing local homeowners for more than 20 years.
+            Proudly serving Fairfield &amp; Westchester County with residential and commercial HVAC services.
           </p>
-          <img
-            src="https://neas-hvac.com/wp-content/uploads/2021/01/Award_2021_transparent-1.png"
-            alt="Expertise.com Best HVAC Professionals in Danbury 2021"
-            className="mx-auto h-28 object-contain"
-            loading="lazy"
-            decoding="async"
-          />
         </div>
       </section>
 
@@ -191,7 +183,7 @@ export default function HomePage() {
                   <Link
                     to={svc.path}
                     className="inline-flex items-center text-sm font-bold transition-colors"
-                    style={{ color: '#CE1126' }}
+                    style={{ color: colors.primaryHex }}
                   >
                     Learn More →
                   </Link>
@@ -206,7 +198,7 @@ export default function HomePage() {
       <GoogleReviews />
 
       {/* ─── Emergency CTA Bar ─── */}
-      <div className="py-12" style={{ backgroundColor: '#003DA5' }}>
+      <div className="py-12" style={{ backgroundColor: colors.dark }}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-2xl font-extrabold text-white mb-2">24 Hour Emergency Service</p>
           <p className="text-white/80 mb-6">
@@ -214,7 +206,7 @@ export default function HomePage() {
           </p>
           <a
             href={`tel:${phone}`}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-lg font-bold text-white border-2 border-white hover:bg-white hover:text-[#003DA5] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-lg font-bold text-white border-2 border-white hover:bg-white hover:opacity-90 transition-colors"
           >
             <Phone className="w-5 h-5" />
             Emergency Call 24/7 — {phoneFormatted}
