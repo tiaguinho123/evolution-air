@@ -27,7 +27,7 @@ export default function ContactForm() {
           {/* Info */}
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
             {[
-              { icon: Phone, label: 'Call or Text', value: phoneFormatted, href: `tel:${phone}`, sub: 'Available Mon–Sat, 7am–7pm' },
+              { icon: Phone, label: 'Call or Text', value: phoneFormatted, href: `tel:${phone}`, sub: 'Mon–Fri 8am–4:30pm · 24/7 Emergencies' },
               { icon: Mail, label: 'Email Us', value: email, href: `mailto:${email}`, sub: null },
               { icon: MapPin, label: 'Address', value: `${address.street}, ${address.city}, ${address.state} ${address.zip}`, href: null, sub: null },
             ].map((item, i) => (
@@ -114,7 +114,7 @@ export default function ContactForm() {
                 </div>
                 <button type="submit"
                   className="w-full py-4 px-8 font-bold text-lg rounded-xl transition-all hover:-translate-y-0.5 shadow-lg flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                  style={{ backgroundColor: colors.primaryHex, color: '#0F172A' }}>
+                  style={{ backgroundColor: colors.primaryHex, color: '#FFFFFF' }}>
                   <Send className="w-5 h-5" aria-hidden="true" />
                   Request Free Estimate
                 </button>

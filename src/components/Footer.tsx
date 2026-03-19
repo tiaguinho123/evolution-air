@@ -14,18 +14,18 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand — real NEAS logo image */}
           <div className="col-span-1 md:col-span-2">
-            <a href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-block mb-6">
+            <a href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-block mb-6" aria-label={`${businessName} — Home`}>
               <img
-                src="https://neas-hvac.com/wp-content/uploads/2018/11/NEAS-LOGO.png"
-                alt="New England Air Systems LLC"
-                className="h-16 object-contain"
+                src="https://evolutionairllc.com/wp-content/uploads/2019/11/evolution-air-logo_horizontal-3.png"
+                alt={`${businessName} — Heating & Cooling`}
+                className="h-14 object-contain"
                 loading="lazy"
                 decoding="async"
               />
             </a>
             <p className="text-slate-400 max-w-sm mb-4 leading-relaxed text-sm">{footerTagline}</p>
             <p className="text-xs text-slate-500 mb-2">{license}</p>
-            <p className="text-xs text-slate-500">© {new Date().getFullYear()} {businessName}, LLC. All rights reserved.</p>
+            <p className="text-xs text-slate-500">© {new Date().getFullYear()} {businessName}. All rights reserved.</p>
           </div>
 
           {/* Contact */}
@@ -63,8 +63,11 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-x-3 gap-y-2" aria-label="Towns we serve">
               {serviceAreaTowns.map((town) => (
                 <li key={town}>
-                  <a href="#contact" className="text-sm text-slate-400 hover:text-amber-400 transition-colors">
-                    {town}, {/* state auto-appended if needed */}CT
+                  <a href="#contact" className="text-sm text-slate-400 transition-colors" style={{ color: 'inherit' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = colors.primaryHex)}
+                    onMouseLeave={e => (e.currentTarget.style.color = '')}
+                  >
+                    {town}
                   </a>
                 </li>
               ))}

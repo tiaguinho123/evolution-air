@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FinancingStrip from './components/FinancingStrip';
+import MobileStickyFooter from './components/MobileStickyFooter';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -49,6 +50,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <MobileStickyFooter />
     </BrowserRouter>
   );
 }
